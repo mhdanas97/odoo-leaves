@@ -1,0 +1,7 @@
+<odoo>
+
+        <record id="portal_group" model="res.groups">
+            <field name="name">ext_leaves/portal</field>
+        </record>
+
+</odoo>
