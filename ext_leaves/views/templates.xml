@@ -3,7 +3,7 @@
        <data>
          <template id="portal_my_home_leaves" name="Portal My Home: leaves entries" inherit_id="portal.portal_my_home">
                 <xpath expr="//ul[hasclass('o_portal_docs')]" position="inside" >
-                   <li class="list-group-item">
+                   <li  class="list-group-item">
                       <span class="badge" />
                           <a href="/my/leaves">Leaves</a>
                    </li>
@@ -29,11 +29,8 @@
                              <form action="/my/leaves/"  method="post" data-model_name="hr.holidays" data-success_page="" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data" data-editable-form="false">
                             <!--<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
                              <div class="container">
-<!--
-                              <p> employee:
-                                 <i t-field="employee_id.name"/>
-                              </p>
--->
+
+
 
                             <div class="form-group form-field o_website_form_required_custom">
                                     <label class="col-md-3 col-sm-4 control-label" for="name">Description</label>
@@ -111,7 +108,18 @@
                  <div class="oe_structure"/>
                  <div class="oe_structure">
                     <div class="container">
-                        <p> You can not have 2 leaves that overlaps on same day! </p>
+                        <p> You can not have 2 leaves that overlaps on same day or you have reached the limit for this leave type ! </p>
+                    </div>
+                    </div>
+             </t>
+        </template>
+        <template id="constrain">
+             <t t-call="website.layout">
+                 <t t-set="title">Ext_Leaves</t>
+                 <div class="oe_structure"/>
+                 <div class="oe_structure">
+                    <div class="container">
+                        <p> Date from should not be after Date to! </p>
                     </div>
                     </div>
              </t>
